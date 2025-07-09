@@ -3,6 +3,16 @@
 
 .header{
     background-color: v.$verde;
+    @include m.tablet{
+        &.fixed{
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                box-shadow: .1rem .2rem .3rem #333;
+        }
+    }
+    
 
     .contenido-header{
         padding: 2rem;
@@ -33,7 +43,8 @@
     a{
         color: v.$blanco;
         font-size: 2.4rem;
-        &:hover{ //Se utiliza & para q el compilador lo tome de la forma correcta y funcione nuestro hover (que es cuando te pones sobre un enlace y este tome un color en especifico por ej)
+        &:hover,
+        &.active{ //Se utiliza & para q el compilador lo tome de la forma correcta y funcione nuestro hover (que es cuando te pones sobre un enlace y este tome un color en especifico por ej)
             color: v.$amarillo;
         }
     }
